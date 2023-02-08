@@ -1,0 +1,31 @@
+{% extends "anggota/index.html" %}
+
+
+{% block content%}
+<div class="container bg-light mt-2 shadow p-3 mb-5 bg-white rounded">
+<h3>Data Anggota</h3>  <a href="{% url 'anggota:create_anggota'%}" class="btn btn-primary mt-2">Tambah Data</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nama</th>
+        <th scope="col">slug</th>
+        <th scope="col">act</th>
+      </tr>
+    </thead>
+    <tbody>   
+	    {% for anggota in semua_anggota %}
+	    	<tr>
+		      <th scope="row">{{forloop.counter}}</th>
+		      <td>{{anggota.nama}}</td>
+		      <td>{{anggota.slug}}</td>
+              <td><a href="{% url 'anggota:update_anggota' anggota.id%}" class="btn btn-primary me-2"><i data-feather="edit"></i></a><a href="{% url 'anggota:delete_anggota' anggota.id%}" class="btn btn-primary"><i data-feather="trash"></i></a></td>
+         
+		    </tr>
+	    {% endfor %}
+	  </tbody>      
+</div>
+
+{% endblock content%}
+
+

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{page_title}}
+{% endblock title %}
+
+{% block contents %}
+
+  
+  
+	<h1>{{judul}}</h1>
+	<form method="POST" id="input">
+		{% csrf_token %}
+		<table>
+			{{akun_form.as_table}}
+		</table>
+		<button type="Submit">Kirim</button>
+	</form>
+  <div id="msg"><h1>{{msg}}</h1></div>
+  
+{% endblock contents %}
+
+{% block scripts %}
+<script>
+  input=$("#id_slug")
+  $("#input").hide()
+  keytype=''
+  $(document).keypress(function(event) {
+    var key = String.fromCharCode(event.which);
+    keytype += key
+    // $("#keyboard-result").html(keytype);
+    if(event.which == 13){
+      input.val(keytype)
+      document.getElementById("input").submit();
+      $("#msg").fadeOut(2000);
+      // window.location.href = {% url 'absen:absen'%};        
+    }
+  });
+
+</script>
+{% endblock scripts %}

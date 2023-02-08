@@ -1,0 +1,23 @@
+{% extends "newbase.html" %}
+
+
+
+{% block title%}
+<title>Anggota</title>
+{% endblock title%}
+
+{% block tema%}
+<h5 class="offcanvas-title" id="offcanvasExampleLabel">ANGGOTA</h5>
+{% endblock tema%}
+
+
+{% block menu_list %}
+
+<a href="{% url 'anggota:create_anggota'%}" class="list-group-item list-group-item-action">Tambah Anggota</a>
+<a href="{% url 'anggota:data_anggota'%}" class="list-group-item list-group-item-action">Data Anggota</a>
+<a href="{% url 'anggota:data_absen'%}" class="list-group-item list-group-item-action">Data Absen</a>
+<a href="{% url 'absen:absen'%}" class="list-group-item list-group-item-action">Absen</a>
+
+
+
+{% endblock menu_list %}

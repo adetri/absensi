@@ -1,0 +1,23 @@
+{% extends "anggota/index.html" %}
+
+{% block content%}
+<div class="container bg-light mt-2 shadow p-3 mb-5 bg-white rounded">
+    <h3>Form Pendaftaran Anggota</h3>
+    <form method="POST" id="input">
+        {% csrf_token %}
+        <table>
+            <div class="form-group">
+            {{akun_form.nama.label}}
+            {{akun_form.nama}}
+            {{akun_form.slug.label}}
+            {{akun_form.slug}}
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Kirim</button>
+            
+        </table>
+        
+    </form>
+</div>
+{% endblock content%}
+
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+
+{% block page_title %}
+{{judul}}
+{% endblock page_title %}
+
+{% block contents %}
+<h1>{{judul}}</h1>
+{% endblock contents %}
+
+{% block form %}
+<form method="POST">
+		{% csrf_token %}
+		<table>
+			{{akun_form.as_table}}
+		</table>
+		<button type="Submit">Kirim</button>
+	</form>
+{% endblock form %}
+ 
+
+

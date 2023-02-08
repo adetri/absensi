@@ -1,0 +1,30 @@
+{% extends "anggota/index.html" %}
+
+
+{% block content%}
+<div class="container bg-light mt-2 shadow p-3 mb-5 bg-white rounded">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Jam</th>
+        <th scope="col">Tgl</th>
+      </tr>
+    </thead>
+    <tbody>   
+	    {% for absen in anggota %}
+	    	<tr>
+		      <th scope="row">{{forloop.counter}}</th>
+          <td>{{absen.anggota.nama}}</td>
+          <td>{{absen.jam_absen}}</td>
+          <td>{{absen.tgl_absem}}</td>
+		    </tr>
+	    {% endfor %}
+	  </tbody>      
+</div>
+
+{% endblock content%}
+
+
