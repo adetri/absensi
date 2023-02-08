@@ -68,7 +68,7 @@ class Data_absen(TemplateView):
 
     def get_context_data(self):
         anggota = Absen.objects.select_related('anggota').all()
-        print(anggota.get())
+
         context = {
             'judul': 'Data Absen',
             'anggota': anggota,
