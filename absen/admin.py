@@ -7,3 +7,4 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Absen)
+admin.site.register(Jam_absen)

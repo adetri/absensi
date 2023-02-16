@@ -8,6 +8,9 @@ class AnggotaForm(forms.ModelForm):
         fields = [
             'nama',
             'slug',
+            'nama_orang_tua',
+            'no_telp_orang_tua',
+
 
         ]
 
@@ -18,6 +21,16 @@ class AnggotaForm(forms.ModelForm):
                     'placeholder': 'Isi dengan Nama'
                 }),
             'slug': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'slug target'
+                }),
+            'nama_orang_tua': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'slug target'
+                }),
+            'no_telp_orang_tua': forms.TextInput(
                 attrs={
                     'class': 'form-control',
                     'placeholder': 'slug target'

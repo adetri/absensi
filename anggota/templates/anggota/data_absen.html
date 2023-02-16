@@ -11,6 +11,8 @@
         <th scope="col">Nama</th>
         <th scope="col">Jam</th>
         <th scope="col">Tgl</th>
+        <th scope="col">Nama Orang Tua</th>
+        <th scope="col">No Hp Orang Tua</th>
       </tr>
     </thead>
     <tbody>   
@@ -19,7 +21,9 @@
 		      <th scope="row">{{forloop.counter}}</th>
           <td>{{absen.anggota.nama}}</td>
           <td>{{absen.jam_absen}}</td>
-          <td>{{absen.tgl_absem}}</td>
+          <td>{{absen.tgl_absen}}</td>
+          <td>{{absen.anggota.nama_orang_tua}}</td>
+          <td>{{absen.anggota.no_telp_orang_tua}}</td>
 		    </tr>
 	    {% endfor %}
 	  </tbody>      

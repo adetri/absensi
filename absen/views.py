@@ -73,13 +73,13 @@ class absensi(View):
         tgl = datetime.now().date().strftime("%Y-%m-%d")
 
         validasi_absen = Absen.objects.filter(
-            anggota_id=data.get('id')).filter(tgl_absem=tgl)
+            anggota_id=data.get('id')).filter(tgl_absen=tgl)
 
         if len(validasi_absen) > 0:
             msg = "Anda Sudah Absen"
             return redirect('absen:status', mg=(msg))
 
-        obj = Absen(anggota_id=data.get('id'), jam_absen=jam, tgl_absem=tgl)
+        obj = Absen(anggota_id=data.get('id'), jam_absen=jam, tgl_absen=tgl)
         result = obj.save()
 
         if result is None:
